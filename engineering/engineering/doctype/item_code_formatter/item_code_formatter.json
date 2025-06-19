@@ -1,0 +1,37 @@
+{
+  "doctype": "DocType",
+  "name": "Item Code Formatter",
+  "module": "Engineering",
+  "custom": 1,
+  "fields": [
+    {
+      "fieldname": "item_code_type_description",
+      "label": "Item Code Type Description",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "item_code_type_id",
+      "label": "Item Code Type ID",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "item_code_length",
+      "label": "Item Code Length",
+      "fieldtype": "Int"
+    },
+    {
+      "fieldname": "item_code_format",
+      "label": "Item Code Format",
+      "fieldtype": "Data"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ]
+}

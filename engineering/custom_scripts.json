@@ -1,0 +1,14 @@
+[
+  {
+    "doctype": "Custom Script",
+    "script_type": "Client",
+    "reference_doctype": "BOM Item",
+    "script": "frappe.ui.form.on('BOM Item', {\n  item: function(frm, cdt, cdn) {\n    let row = locals[cdt][cdn];\n    frappe.model.set_value(cdt, cdn, 'item_version', null);\n    frm.fields_dict['items'].grid.get_field('item_version').get_query = function(doc, cdt, cdn) {\n      let child = locals[cdt][cdn];\n      return {\n        filters: { item: child.item }\n      };\n    };\n  }\n});"
+  },
+  {
+    "doctype": "Custom Script",
+    "script_type": "Client",
+    "reference_doctype": "Item",
+    "script": "frappe.ui.form.on('Item', {\n  refresh: function(frm) {\n    frappe.call({\n      method: 'frappe.client.get_list',\n      args: {\n        doctype: 'Item Version',\n        filters: { item: frm.doc.name },\n        fields: ['name','change_description','attachment']\n      },\n      callback: (r) => {\n        if (r.message) {\n          frm.clear_table('engineering_versions');\n          r.message.forEach(v => {\n            let row = frm.add_child('engineering_versions');\n            row.name = v.name;\n            row.change_description = v.change_description;\n            row.attachment = v.attachment;\n          });\n          frm.refresh_field('engineering_versions');\n        }\n      }\n    });\n  }\n});"
+  }
+]

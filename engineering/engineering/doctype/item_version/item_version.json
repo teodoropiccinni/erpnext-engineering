@@ -1,0 +1,41 @@
+{
+  "doctype": "DocType",
+  "name": "Item Version",
+  "module": "Engineering",
+  "custom": 1,
+  "fields": [
+    {
+      "fieldname": "uuid_id",
+      "label": "UUID",
+      "fieldtype": "Data",
+      "read_only": 1
+    },
+    {
+      "fieldname": "item",
+      "label": "Item",
+      "fieldtype": "Link",
+      "options": "Item",
+      "reqd": 1
+    },
+    {
+      "fieldname": "change_description",
+      "label": "Change Description",
+      "fieldtype": "Small Text"
+    },
+    {
+      "fieldname": "attachment",
+      "label": "Attachment",
+      "fieldtype": "Attach"
+    }
+  ],
+  "autoname": "hash",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ]
+}

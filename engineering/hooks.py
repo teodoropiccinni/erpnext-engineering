@@ -1,0 +1,9 @@
+app_name = "engineering"
+app_title = "Engineering"
+app_publisher = "Your Name"
+app_description = "Custom ERPNext module for managing Item Versions"
+app_icon = "octicon octicon-tools"
+app_color = "blue"
+app_email = "you@example.com"
+app_license = "MIT"
+fixtures = ["Custom Field", "Custom Script"]

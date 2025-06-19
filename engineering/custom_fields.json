@@ -1,0 +1,20 @@
+[
+  {
+    "doctype": "Custom Field",
+    "dt": "BOM Item",
+    "fieldname": "item_version",
+    "label": "Item Version",
+    "fieldtype": "Link",
+    "options": "Item Version",
+    "insert_after": "item"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "Item",
+    "fieldname": "engineering_versions",
+    "label": "Engineering Versions",
+    "fieldtype": "Table",
+    "options": "Item Version",
+    "insert_after": "description"
+  }
+]
